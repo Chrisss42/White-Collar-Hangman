@@ -10,3 +10,16 @@ c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecolla
 c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.exe
 c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.pdb
 C:\Users\Chris\Documents\Visual Studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form2.resources
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.exe.config
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.exe
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.xml
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.pdb
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.exe
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.pdb
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.xml
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbprojResolveAssemblyReference.cache
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form1.resources
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form2.resources
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Level1.resources
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Resources.resources
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbproj.GenerateResource.Cache
