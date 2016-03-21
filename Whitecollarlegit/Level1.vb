@@ -104,14 +104,16 @@ Public Class Level1
             Loop
         End If
         If lblWord.Text.Contains("?") Then
+            If Len(Label3.Text) > 10 Then
+                MsgBox("You lose one life.")
+                genWord()
+            End If
         Else MsgBox("You win!")
             If Len(Label3.Text) = 0 Then
                 Points += 1000
             ElseIf Len(Label3.Text) <= 5
                 Points += 750
-            ElseIf Len(Label3.Text) <= 10
-                Points += 500
-            Else MsgBox("You lose!")
+            Else Points += 500
             End If
             lblPoint.Text = Points
             genWord()
@@ -147,14 +149,16 @@ Public Class Level1
             Loop
         End If
         If lblWord.Text.Contains("?") Then
+            If Len(Label3.Text) > 10 Then
+                MsgBox("You lose one life.")
+                genWord()
+            End If
         Else MsgBox("You win!")
             If Len(Label3.Text) = 0 Then
                 Points += 1000
             ElseIf Len(Label3.Text) <= 5
                 Points += 750
-            ElseIf Len(Label3.Text) <= 10
-                Points += 500
-            Else MsgBox("You lose!")
+            Else Points += 500
             End If
             lblPoint.Text = Points
             genWord()
