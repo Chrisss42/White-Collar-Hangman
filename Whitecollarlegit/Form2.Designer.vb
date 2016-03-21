@@ -57,9 +57,7 @@ Partial Class Form2
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(300, 222)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Today you are going to embark on a challenging set of missions, in which you will" &
-    " be guesssing the correct words which co respond to the topic dispayed on the sc" &
-    "reen"
+        Me.Label2.Text = resources.GetString("Label2.Text")
         '
         'Form2
         '
