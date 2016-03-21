@@ -1,0 +1,12 @@
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\bin\Debug\Whitecollarlegit.exe.config
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbprojResolveAssemblyReference.cache
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form1.resources
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.Resources.resources
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbproj.GenerateResource.Cache
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.xml
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\bin\Debug\Whitecollarlegit.exe
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\bin\Debug\Whitecollarlegit.pdb
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\bin\Debug\Whitecollarlegit.xml
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.exe
+c:\users\chris\documents\visual studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.pdb
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form2.resources
