@@ -39,3 +39,5 @@ E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarle
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.frmMsg1.resources
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbprojResolveAssemblyReference.cache
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Arcade.resources
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Arcade.resources
+C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.frmMsg1.resources

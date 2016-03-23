@@ -40,7 +40,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Close()
+        Me.Hide()
         Arcade.Show()
     End Sub
 End Class
