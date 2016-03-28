@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Arcade
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,49 +20,50 @@ Partial Class Arcade
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Arcade))
+        Me.lblTime = New System.Windows.Forms.Label()
         Me.lblPoint = New System.Windows.Forms.Label()
-        Me.lblFailed = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.picChar = New System.Windows.Forms.PictureBox()
         Me.imgChars = New System.Windows.Forms.ImageList(Me.components)
         Me.btnStart = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnQuit = New System.Windows.Forms.Button()
+        CType(Me.picChar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'lblTime
+        '
+        Me.lblTime.AutoSize = True
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTime.ForeColor = System.Drawing.Color.Black
+        Me.lblTime.Location = New System.Drawing.Point(193, 54)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(49, 39)
+        Me.lblTime.TabIndex = 16
+        Me.lblTime.Text = "30"
         '
         'lblPoint
         '
         Me.lblPoint.AutoSize = True
         Me.lblPoint.BackColor = System.Drawing.Color.Transparent
-        Me.lblPoint.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPoint.ForeColor = System.Drawing.Color.Black
-        Me.lblPoint.Location = New System.Drawing.Point(193, 54)
+        Me.lblPoint.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoint.Location = New System.Drawing.Point(839, 18)
         Me.lblPoint.Name = "lblPoint"
-        Me.lblPoint.Size = New System.Drawing.Size(49, 39)
-        Me.lblPoint.TabIndex = 16
-        Me.lblPoint.Text = "30"
+        Me.lblPoint.Size = New System.Drawing.Size(89, 33)
+        Me.lblPoint.TabIndex = 17
+        Me.lblPoint.Text = "FAILED"
         '
-        'lblFailed
+        'picChar
         '
-        Me.lblFailed.AutoSize = True
-        Me.lblFailed.BackColor = System.Drawing.Color.Transparent
-        Me.lblFailed.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFailed.Location = New System.Drawing.Point(839, 18)
-        Me.lblFailed.Name = "lblFailed"
-        Me.lblFailed.Size = New System.Drawing.Size(89, 33)
-        Me.lblFailed.TabIndex = 17
-        Me.lblFailed.Text = "FAILED"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(140, 96)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(300, 300)
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
+        Me.picChar.Location = New System.Drawing.Point(140, 96)
+        Me.picChar.Name = "picChar"
+        Me.picChar.Size = New System.Drawing.Size(300, 300)
+        Me.picChar.TabIndex = 18
+        Me.picChar.TabStop = False
         '
         'imgChars
         '
@@ -88,14 +89,19 @@ Partial Class Arcade
         Me.btnStart.Text = "Start!"
         Me.btnStart.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Timer1
         '
-        Me.Button1.Location = New System.Drawing.Point(140, 417)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(300, 35)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Timer1.Interval = 1000
+        '
+        'btnQuit
+        '
+        Me.btnQuit.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuit.Location = New System.Drawing.Point(1155, 9)
+        Me.btnQuit.Name = "btnQuit"
+        Me.btnQuit.Size = New System.Drawing.Size(97, 74)
+        Me.btnQuit.TabIndex = 20
+        Me.btnQuit.Text = "Save + Quit"
+        Me.btnQuit.UseVisualStyleBackColor = True
         '
         'Arcade
         '
@@ -103,23 +109,24 @@ Partial Class Arcade
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.Arcade
         Me.ClientSize = New System.Drawing.Size(1264, 681)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnStart)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.lblFailed)
+        Me.Controls.Add(Me.picChar)
         Me.Controls.Add(Me.lblPoint)
+        Me.Controls.Add(Me.lblTime)
         Me.Name = "Arcade"
         Me.Text = "Arcade"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picChar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents lblTime As Label
     Friend WithEvents lblPoint As Label
-    Friend WithEvents lblFailed As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents picChar As PictureBox
     Friend WithEvents imgChars As ImageList
     Friend WithEvents btnStart As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents btnQuit As Button
 End Class

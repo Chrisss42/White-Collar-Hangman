@@ -14,7 +14,7 @@ Public Class Level1
     Dim correct As Boolean
     Dim letterpos As Integer
     Dim lblWords(3) As Label
-
+    Dim response As Integer
     Private Sub Level1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frmMsg1.ShowDialog(Me)
         picJail.BackgroundImage = Jailed.Images(0)
@@ -69,6 +69,7 @@ Public Class Level1
         lblWords(1) = lblWord2
         lblWords(2) = lblWord3
         lblWords(3) = lblWord4
+        lblPoint.Text = Trust & "%"
     End Sub
 
     Private Sub Clicked(sender As System.Object, e As System.EventArgs)
@@ -76,9 +77,14 @@ Public Class Level1
         For x = 0 To 3
             If Words(0).Contains(guessletter) = False And Words(1).Contains(guessletter) = False And Words(2).Contains(guessletter) = False And Words(3).Contains(guessletter) = False Then
                 If Len(lblFailed.Text) = 9 Then
-                    MsgBox("You lose one getaway. Buy more on The Street.")
-                    Me.Close()
-                    Form1.Show()
+                    response = MsgBox("You lose one getaway. Buy more on The Street.", 4, "Defeated!")
+                    If response = 6 Then
+                        Me.Refresh()
+                    Else
+
+                        Form1.Show()
+                        Me.Close()
+                    End If
                 End If
                 lblErrors.Text = (Len(lblFailed.Text) + 1)
                 picJail.Image = Jailed.Images((Len(lblFailed.Text) + 1))
@@ -99,7 +105,6 @@ Public Class Level1
             If Not lblWords(1).Text.Contains("?") Then
                 If Not lblWords(2).Text.Contains("?") Then
                     If Not lblWords(3).Text.Contains("?") Then
-                        MsgBox("You passed the episode.")
                         If Trust <> 100 Then
                             If (Len(lblFailed.Text) <= 3) Then
                                 If (Trust >= 0 And Trust <= 25) Then
@@ -124,7 +129,10 @@ Public Class Level1
                                 End If
                             End If
                         End If
-                        lblPoint.Text = Trust & "%"
+                        MsgBox("Congrats, " & Name & " you passed!" & vbCrLf & "Peter's trust total: " & Trust & "%")
+
+                        Me.Close()
+                        Form1.Show()
                     End If
                 End If
             End If
