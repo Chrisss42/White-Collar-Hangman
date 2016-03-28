@@ -10,7 +10,6 @@ Public Class Level1
     Dim myfont As Font = New Font(FontFamily.GenericSansSerif, 14.0F, FontStyle.Bold)
     Dim wordnum As Integer
     Dim guessletter As String
-    Dim guesses As String
     Dim Words(3) As String
     Dim correct As Boolean
     Dim letterpos As Integer
@@ -73,32 +72,18 @@ Public Class Level1
     End Sub
 
     Private Sub Clicked(sender As System.Object, e As System.EventArgs)
-        guesses = guesses & sender.text
         guessletter = sender.text
         For x = 0 To 3
-            If Words(x).Contains(guessletter) = False Then
-                If Len(lblFailed.Text) = 0 Then
-                    picJail.BackgroundImage = Jailed.Images(1)
-                ElseIf Len(lblFailed.Text) = 1
-                    picJail.BackgroundImage = Jailed.Images(2)
-                ElseIf Len(lblFailed.Text) = 2
-                    picJail.BackgroundImage = Jailed.Images(3)
-                ElseIf Len(lblFailed.Text) = 3
-                    picJail.BackgroundImage = Jailed.Images(4)
-                ElseIf Len(lblFailed.Text) = 4
-                    picJail.BackgroundImage = Jailed.Images(5)
-                ElseIf Len(lblFailed.Text) = 5
-                    picJail.BackgroundImage = Jailed.Images(6)
-                ElseIf Len(lblFailed.Text) = 6
-                    picJail.BackgroundImage = Jailed.Images(7)
-                ElseIf Len(lblFailed.Text) = 7
-                    picJail.BackgroundImage = Jailed.Images(8)
-                ElseIf Len(lblFailed.Text) = 8
-                    picJail.BackgroundImage = Jailed.Images(9)
+            If Words(0).Contains(guessletter) = False And Words(1).Contains(guessletter) = False And Words(2).Contains(guessletter) = False And Words(3).Contains(guessletter) = False Then
+                If Len(lblFailed.Text) = 9 Then
                     MsgBox("You lose one getaway. Buy more on The Street.")
+                    Me.Close()
+                    Form1.Show()
                 End If
+                lblErrors.Text = (Len(lblFailed.Text) + 1)
+                picJail.Image = Jailed.Images((Len(lblFailed.Text) + 1))
                 If lblFailed.Text.Contains(guessletter) = False Then
-                    lblFailed.Text &= guessletter
+                    lblFailed.Text = lblFailed.Text & guessletter
                 End If
             Else
                 letterpos = 0

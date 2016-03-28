@@ -34,6 +34,8 @@ Partial Class Level1
         Me.lblWord2 = New System.Windows.Forms.Label()
         Me.lblWord3 = New System.Windows.Forms.Label()
         Me.lblWord4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblErrors = New System.Windows.Forms.Label()
         CType(Me.picJail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,7 +62,7 @@ Partial Class Level1
         'lblWord1
         '
         Me.lblWord1.BackColor = System.Drawing.Color.White
-        Me.lblWord1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWord1.Location = New System.Drawing.Point(13, 121)
         Me.lblWord1.Name = "lblWord1"
         Me.lblWord1.Size = New System.Drawing.Size(148, 22)
@@ -117,7 +119,7 @@ Partial Class Level1
         'lblWord2
         '
         Me.lblWord2.BackColor = System.Drawing.Color.White
-        Me.lblWord2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWord2.Location = New System.Drawing.Point(79, 188)
         Me.lblWord2.Name = "lblWord2"
         Me.lblWord2.Size = New System.Drawing.Size(131, 22)
@@ -128,7 +130,7 @@ Partial Class Level1
         'lblWord3
         '
         Me.lblWord3.BackColor = System.Drawing.Color.White
-        Me.lblWord3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWord3.Location = New System.Drawing.Point(293, 343)
         Me.lblWord3.Name = "lblWord3"
         Me.lblWord3.Size = New System.Drawing.Size(63, 22)
@@ -139,7 +141,7 @@ Partial Class Level1
         'lblWord4
         '
         Me.lblWord4.BackColor = System.Drawing.Color.White
-        Me.lblWord4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWord4.Location = New System.Drawing.Point(362, 583)
         Me.lblWord4.Name = "lblWord4"
         Me.lblWord4.Size = New System.Drawing.Size(51, 22)
@@ -147,13 +149,39 @@ Partial Class Level1
         Me.lblWord4.Text = "????"
         Me.lblWord4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(742, 333)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 33)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "/ 9"
+        '
+        'lblErrors
+        '
+        Me.lblErrors.AutoSize = True
+        Me.lblErrors.BackColor = System.Drawing.Color.Transparent
+        Me.lblErrors.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblErrors.ForeColor = System.Drawing.Color.White
+        Me.lblErrors.Location = New System.Drawing.Point(719, 334)
+        Me.lblErrors.Name = "lblErrors"
+        Me.lblErrors.Size = New System.Drawing.Size(29, 33)
+        Me.lblErrors.TabIndex = 22
+        Me.lblErrors.Text = "0"
+        '
         'Level1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.Ep_1
+        Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.Ep_11
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.lblErrors)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblFailed)
         Me.Controls.Add(Me.lblWord4)
         Me.Controls.Add(Me.lblWord3)
@@ -182,4 +210,6 @@ Partial Class Level1
     Friend WithEvents lblWord2 As Label
     Friend WithEvents lblWord3 As Label
     Friend WithEvents lblWord4 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblErrors As Label
 End Class
