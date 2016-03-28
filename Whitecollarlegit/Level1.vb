@@ -1,5 +1,5 @@
 ﻿Public Module GlobalVariables
-    Public Points As Integer
+    Public Trust As Integer
 End Module
 Public Class Level1
     Public letters(25) As Button
@@ -11,25 +11,18 @@ Public Class Level1
     Dim wordnum As Integer
     Dim guessletter As String
     Dim guesses As String
-    Dim Words(5) As String
+    Dim Words(3) As String
     Dim correct As Boolean
-    Dim word As String
     Dim letterpos As Integer
-
+    Dim lblWords(3) As Label
 
     Private Sub Level1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Randomize()
-
-        'accept = MsgBox("Accept?", 4, "Accept")
-        'If accept = 6 Then
-        '    Me.Show()
-        'Else
-        '    End
-        'End If
-
-
-        buttonpoint.X = 535
-        buttonpoint.Y = 65
+        frmMsg1.ShowDialog(Me)
+        picJail.BackgroundImage = Jailed.Images(0)
+        buttonpoint.X = 835
+        buttonpoint.Y = 95
+        lblFailed.Text = ""
+        letterpos = 0
         'Define buttons in button array
         For x = 0 To 25
             letters(x) = New Button
@@ -43,18 +36,19 @@ Public Class Level1
             letters(x).FlatStyle = FlatStyle.Flat
             letters(x).Font = myfont
             If x = 9 Then
-                buttonpoint.Y = 105
-                buttonpoint.X = 555
+                buttonpoint.Y = 135
+                buttonpoint.X = 855
             End If
             If x = 18 Then
-                buttonpoint.Y = 145
-                buttonpoint.X = 575
+                buttonpoint.Y = 175
+                buttonpoint.X = 875
             End If
             AddHandler letters(x).Click, AddressOf Clicked
             Me.Controls.Add(letters(x))
         Next
-        buttonpoint.X = 655
-        buttonpoint.Y = 185
+        'Add a space bar!
+        buttonpoint.X = 955
+        buttonpoint.Y = 215
         space = New Button
         space.Width = 195
         space.Height = 35
@@ -63,105 +57,95 @@ Public Class Level1
         space.ForeColor = Color.White
         space.FlatStyle = FlatStyle.Flat
         space.Font = myfont
-        space.Text = "Space"
+        space.Text = " "
         AddHandler space.Click, AddressOf Clicked
         Me.Controls.Add(space)
-        genWord()
-
-    End Sub
-
-    Private Sub genWord()
-        guesses = ""
-        letterpos = 0
-        Label3.Text = guesses
-        'Word Gen
-        Words(1) = "HI"
-        Words(2) = "BYE"
-        Words(3) = "HELLO"
-        Words(4) = "NO"
-        Words(5) = "YES"
-        wordnum = 5 * Rnd()
-        word = UCase(Words(wordnum))
-        lblWord.Text = word
-        For x = 1 To Len(word)
-            Mid(lblWord.Text, x, 1) = "?"
-        Next
+        'Words
+        Words(0) = "THE DUTCHMAN"
+        Words(1) = "TRACKING ANKLET"
+        Words(2) = "BOOKS"
+        Words(3) = "KATE"
+        'Labels
+        lblWords(0) = lblWord1
+        lblWords(1) = lblWord2
+        lblWords(2) = lblWord3
+        lblWords(3) = lblWord4
     End Sub
 
     Private Sub Clicked(sender As System.Object, e As System.EventArgs)
         guesses = guesses & sender.text
         guessletter = sender.text
-        If word.Contains(guessletter) = False Then
-            If Label3.Text.Contains(guessletter) Then
+        For x = 0 To 3
+            If Words(x).Contains(guessletter) = False Then
+                If Len(lblFailed.Text) = 0 Then
+                    picJail.BackgroundImage = Jailed.Images(1)
+                ElseIf Len(lblFailed.Text) = 1
+                    picJail.BackgroundImage = Jailed.Images(2)
+                ElseIf Len(lblFailed.Text) = 2
+                    picJail.BackgroundImage = Jailed.Images(3)
+                ElseIf Len(lblFailed.Text) = 3
+                    picJail.BackgroundImage = Jailed.Images(4)
+                ElseIf Len(lblFailed.Text) = 4
+                    picJail.BackgroundImage = Jailed.Images(5)
+                ElseIf Len(lblFailed.Text) = 5
+                    picJail.BackgroundImage = Jailed.Images(6)
+                ElseIf Len(lblFailed.Text) = 6
+                    picJail.BackgroundImage = Jailed.Images(7)
+                ElseIf Len(lblFailed.Text) = 7
+                    picJail.BackgroundImage = Jailed.Images(8)
+                ElseIf Len(lblFailed.Text) = 8
+                    picJail.BackgroundImage = Jailed.Images(9)
+                    MsgBox("You lose one getaway. Buy more on The Street.")
+                End If
+                If Not (lblFailed.Text.Contains(guessletter) = False) Then
+                    lblFailed.Text &= guessletter
+                End If
             Else
-                Label3.Text &= guessletter
+                letterpos = 0
+                Do While InStr(letterpos + 1, Words(x), guessletter) > 0
+                    letterpos = InStr(letterpos + 1, Words(x), guessletter)
+                    Mid(lblWords(x).Text, letterpos, 1) = guessletter
+                Loop
             End If
-        Else
-            letterpos = 0
-            Do While InStr(letterpos + 1, word, guessletter) > 0
-                letterpos = InStr(letterpos + 1, word, guessletter)
-                Mid(lblWord.Text, letterpos, 1) = guessletter
-            Loop
+        Next
+        'THIS SECTION DOESN'T WORK
+        If Not lblWords(0).Text.Contains("?") Then
+            If Not lblWords(1).Text.Contains("?") Then
+                If Not lblWords(2).Text.Contains("?") Then
+                    If Not lblWords(3).Text.Contains("?") Then
+                        MsgBox("You passed the episode.")
+                        If Trust <> 100 Then
+                            If (Len(lblFailed.Text) <= 3) Then
+                                If (Trust >= 0 And Trust <= 25) Then
+                                    Trust += 40
+                                ElseIf (Trust >= 26 And Trust <= 50) Then
+                                    Trust += 35
+                                Else Trust += 30
+                                End If
+                            ElseIf (Len(lblFailed.Text) <= 6) Then
+                                If (Trust >= 0 And Trust <= 25) Then
+                                    Trust += 30
+                                ElseIf (Trust >= 26 And Trust <= 50) Then
+                                    Trust += 25
+                                Else Trust += 20
+                                End If
+                            Else
+                                If (Trust >= 0 And Trust <= 25) Then
+                                    Trust += 20
+                                ElseIf (Trust >= 26 And Trust <= 50) Then
+                                    Trust += 15
+                                Else Trust += 10
+                                End If
+                            End If
+                        End If
+                        lblPoint.Text = Trust & "%"
+                    End If
+                End If
+            End If
         End If
-        If lblWord.Text.Contains("?") Then
-            If Len(Label3.Text) > 10 Then
-                MsgBox("You lose one life.")
-                genWord()
-            End If
-        Else MsgBox("You win!")
-            If Len(Label3.Text) = 0 Then
-                Points += 1000
-            ElseIf Len(Label3.Text) <= 5
-                Points += 750
-            Else Points += 500
-            End If
-            lblPoint.Text = Points
-            genWord()
-        End If
-    End Sub
-
-    Private Sub btnKeyboard_Click(sender As Object, e As EventArgs) Handles btnKeyboard.Click
-        Me.Width = 960
-        sender.hide
-        btnHKeyboard.Show()
-    End Sub
-
-    Private Sub btnHKeyboard_Click(sender As Object, e As EventArgs) Handles btnHKeyboard.Click
-        Me.Width = 544
-        sender.hide
-        btnKeyboard.Show()
 
     End Sub
 
     Private Sub Level1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
-        guesses = guesses & UCase(e.KeyChar)
-        guessletter = UCase(e.KeyChar)
-        If word.Contains(guessletter) = False Then
-            If Label3.Text.Contains(guessletter) Then
-            Else
-                Label3.Text &= guessletter
-            End If
-        Else
-            letterpos = 0
-            Do While InStr(letterpos + 1, word, guessletter) > 0
-                letterpos = InStr(letterpos + 1, word, guessletter)
-                Mid(lblWord.Text, letterpos, 1) = guessletter
-            Loop
-        End If
-        If lblWord.Text.Contains("?") Then
-            If Len(Label3.Text) > 10 Then
-                MsgBox("You lose one life.")
-                genWord()
-            End If
-        Else MsgBox("You win!")
-            If Len(Label3.Text) = 0 Then
-                Points += 1000
-            ElseIf Len(Label3.Text) <= 5
-                Points += 750
-            Else Points += 500
-            End If
-            lblPoint.Text = Points
-            genWord()
-        End If
     End Sub
 End Class

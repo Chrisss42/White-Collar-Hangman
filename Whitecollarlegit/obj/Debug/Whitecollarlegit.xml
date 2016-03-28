@@ -22,6 +22,21 @@ Whitecollarlegit
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Whitecollarlegit.My.Resources.Resources._0">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Whitecollarlegit.My.Resources.Resources.Ep_1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Whitecollarlegit.My.Resources.Resources.Msg1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Whitecollarlegit.My.Resources.Resources.White_collar_ppl">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -22,34 +22,32 @@ Partial Class Level1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Level1))
         Me.lblPoint = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblWord = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblWord1 = New System.Windows.Forms.Label()
+        Me.lblFailed = New System.Windows.Forms.Label()
+        Me.Jailed = New System.Windows.Forms.ImageList(Me.components)
+        Me.picJail = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnHKeyboard = New System.Windows.Forms.Button()
-        Me.btnKeyboard = New System.Windows.Forms.Button()
+        Me.lblWord2 = New System.Windows.Forms.Label()
+        Me.lblWord3 = New System.Windows.Forms.Label()
+        Me.lblWord4 = New System.Windows.Forms.Label()
+        CType(Me.picJail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblPoint
         '
         Me.lblPoint.AutoSize = True
-        Me.lblPoint.Location = New System.Drawing.Point(66, 42)
+        Me.lblPoint.BackColor = System.Drawing.Color.Transparent
+        Me.lblPoint.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoint.ForeColor = System.Drawing.Color.White
+        Me.lblPoint.Location = New System.Drawing.Point(351, 53)
         Me.lblPoint.Name = "lblPoint"
-        Me.lblPoint.Size = New System.Drawing.Size(13, 13)
+        Me.lblPoint.Size = New System.Drawing.Size(48, 33)
         Me.lblPoint.TabIndex = 15
-        Me.lblPoint.Text = "0"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(21, 42)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "Points:"
+        Me.lblPoint.Text = "0%"
         '
         'Label3
         '
@@ -59,79 +57,129 @@ Partial Class Level1
         Me.Label3.Size = New System.Drawing.Size(0, 13)
         Me.Label3.TabIndex = 13
         '
-        'lblWord
+        'lblWord1
         '
-        Me.lblWord.AutoSize = True
-        Me.lblWord.Location = New System.Drawing.Point(105, 259)
-        Me.lblWord.Name = "lblWord"
-        Me.lblWord.Size = New System.Drawing.Size(39, 13)
-        Me.lblWord.TabIndex = 12
-        Me.lblWord.Text = "Label3"
+        Me.lblWord1.BackColor = System.Drawing.Color.White
+        Me.lblWord1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord1.Location = New System.Drawing.Point(13, 121)
+        Me.lblWord1.Name = "lblWord1"
+        Me.lblWord1.Size = New System.Drawing.Size(148, 22)
+        Me.lblWord1.TabIndex = 12
+        Me.lblWord1.Text = "????????????"
+        Me.lblWord1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label2
+        'lblFailed
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(106, 27)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 13)
-        Me.Label2.TabIndex = 11
+        Me.lblFailed.AutoSize = True
+        Me.lblFailed.BackColor = System.Drawing.Color.Transparent
+        Me.lblFailed.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFailed.Location = New System.Drawing.Point(829, 12)
+        Me.lblFailed.Name = "lblFailed"
+        Me.lblFailed.Size = New System.Drawing.Size(89, 33)
+        Me.lblFailed.TabIndex = 11
+        Me.lblFailed.Text = "FAILED"
+        '
+        'Jailed
+        '
+        Me.Jailed.ImageStream = CType(resources.GetObject("Jailed.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.Jailed.TransparentColor = System.Drawing.Color.Transparent
+        Me.Jailed.Images.SetKeyName(0, "0.png")
+        Me.Jailed.Images.SetKeyName(1, "1.png")
+        Me.Jailed.Images.SetKeyName(2, "2.png")
+        Me.Jailed.Images.SetKeyName(3, "3.png")
+        Me.Jailed.Images.SetKeyName(4, "4.png")
+        Me.Jailed.Images.SetKeyName(5, "5.png")
+        Me.Jailed.Images.SetKeyName(6, "6.png")
+        Me.Jailed.Images.SetKeyName(7, "7.png")
+        Me.Jailed.Images.SetKeyName(8, "8.png")
+        Me.Jailed.Images.SetKeyName(9, "9.png")
+        '
+        'picJail
+        '
+        Me.picJail.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources._0
+        Me.picJail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picJail.Location = New System.Drawing.Point(635, 74)
+        Me.picJail.Name = "picJail"
+        Me.picJail.Size = New System.Drawing.Size(205, 256)
+        Me.picJail.TabIndex = 16
+        Me.picJail.TabStop = False
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 27)
+        Me.Label1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Label1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 99)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 13)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Failed Guesses"
+        Me.Label1.Size = New System.Drawing.Size(617, 573)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = resources.GetString("Label1.Text")
         '
-        'btnHKeyboard
+        'lblWord2
         '
-        Me.btnHKeyboard.Location = New System.Drawing.Point(448, 12)
-        Me.btnHKeyboard.Name = "btnHKeyboard"
-        Me.btnHKeyboard.Size = New System.Drawing.Size(75, 43)
-        Me.btnHKeyboard.TabIndex = 9
-        Me.btnHKeyboard.Text = "Hide Keyboard"
-        Me.btnHKeyboard.UseVisualStyleBackColor = True
+        Me.lblWord2.BackColor = System.Drawing.Color.White
+        Me.lblWord2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord2.Location = New System.Drawing.Point(79, 188)
+        Me.lblWord2.Name = "lblWord2"
+        Me.lblWord2.Size = New System.Drawing.Size(131, 22)
+        Me.lblWord2.TabIndex = 18
+        Me.lblWord2.Text = "???????????????"
+        Me.lblWord2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btnKeyboard
+        'lblWord3
         '
-        Me.btnKeyboard.Location = New System.Drawing.Point(448, 12)
-        Me.btnKeyboard.Name = "btnKeyboard"
-        Me.btnKeyboard.Size = New System.Drawing.Size(75, 43)
-        Me.btnKeyboard.TabIndex = 8
-        Me.btnKeyboard.Text = "Show Keyboard"
-        Me.btnKeyboard.UseVisualStyleBackColor = True
-        Me.btnKeyboard.Visible = False
+        Me.lblWord3.BackColor = System.Drawing.Color.White
+        Me.lblWord3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord3.Location = New System.Drawing.Point(293, 343)
+        Me.lblWord3.Name = "lblWord3"
+        Me.lblWord3.Size = New System.Drawing.Size(63, 22)
+        Me.lblWord3.TabIndex = 19
+        Me.lblWord3.Text = "?????"
+        Me.lblWord3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblWord4
+        '
+        Me.lblWord4.BackColor = System.Drawing.Color.White
+        Me.lblWord4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWord4.Location = New System.Drawing.Point(362, 583)
+        Me.lblWord4.Name = "lblWord4"
+        Me.lblWord4.Size = New System.Drawing.Size(51, 22)
+        Me.lblWord4.TabIndex = 20
+        Me.lblWord4.Text = "????"
+        Me.lblWord4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Level1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(943, 409)
+        Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.Ep_1
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.lblWord4)
+        Me.Controls.Add(Me.lblWord3)
+        Me.Controls.Add(Me.lblWord2)
+        Me.Controls.Add(Me.picJail)
         Me.Controls.Add(Me.lblPoint)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.lblWord)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblWord1)
+        Me.Controls.Add(Me.lblFailed)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnHKeyboard)
-        Me.Controls.Add(Me.btnKeyboard)
         Me.KeyPreview = True
         Me.Name = "Level1"
         Me.Text = "Level1"
+        CType(Me.picJail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents lblPoint As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents lblWord As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblWord1 As Label
+    Friend WithEvents lblFailed As Label
+    Friend WithEvents Jailed As ImageList
+    Friend WithEvents picJail As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnHKeyboard As Button
-    Friend WithEvents btnKeyboard As Button
+    Friend WithEvents lblWord2 As Label
+    Friend WithEvents lblWord3 As Label
+    Friend WithEvents lblWord4 As Label
 End Class

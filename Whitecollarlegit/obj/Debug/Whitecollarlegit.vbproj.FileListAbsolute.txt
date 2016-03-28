@@ -24,3 +24,17 @@ C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debu
 C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Resources.resources
 C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbproj.GenerateResource.Cache
 C:\Users\Chris\Documents\Visual Studio 2015\Projects\Whitecollarlegit\Whitecollarlegit\obj\Debug\Whitecollarlegit.Level1.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.exe.config
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.exe
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.xml
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.pdb
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbprojResolveAssemblyReference.cache
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form1.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form2.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Level1.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Resources.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbproj.GenerateResource.Cache
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.exe
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.pdb
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.xml
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.frmMsg1.resources

@@ -85,10 +85,10 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="frmMsg1.Designer.vb">
+      <DependentUpon>frmMsg1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="frmMsg1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Level1.Designer.vb">
@@ -120,8 +120,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="frmMsg1.resx">
+      <DependentUpon>frmMsg1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Level1.resx">
       <DependentUpon>Level1.vb</DependentUpon>
@@ -147,6 +147,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\White collar ppl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ep-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DEAD\0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Msg1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
