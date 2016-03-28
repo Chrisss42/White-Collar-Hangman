@@ -97,7 +97,7 @@ Public Class Level1
                     picJail.BackgroundImage = Jailed.Images(9)
                     MsgBox("You lose one getaway. Buy more on The Street.")
                 End If
-                If Not (lblFailed.Text.Contains(guessletter) = False) Then
+                If lblFailed.Text.Contains(guessletter) = False Then
                     lblFailed.Text &= guessletter
                 End If
             Else
@@ -108,42 +108,42 @@ Public Class Level1
                 Loop
             End If
         Next
-        'THIS SECTION DOESN'T WORK
+
+        'Sorry for the cancerous if statements
         If Not lblWords(0).Text.Contains("?") Then
             If Not lblWords(1).Text.Contains("?") Then
                 If Not lblWords(2).Text.Contains("?") Then
                     If Not lblWords(3).Text.Contains("?") Then
                         MsgBox("You passed the episode.")
                         If Trust <> 100 Then
-                            If (Len(lblFailed.Text) <= 3) Then
-                                If (Trust >= 0 And Trust <= 25) Then
-                                    Trust += 40
-                                ElseIf (Trust >= 26 And Trust <= 50) Then
-                                    Trust += 35
-                                Else Trust += 30
-                                End If
-                            ElseIf (Len(lblFailed.Text) <= 6) Then
-                                If (Trust >= 0 And Trust <= 25) Then
-                                    Trust += 30
-                                ElseIf (Trust >= 26 And Trust <= 50) Then
-                                    Trust += 25
-                                Else Trust += 20
-                                End If
-                            Else
-                                If (Trust >= 0 And Trust <= 25) Then
-                                    Trust += 20
-                                ElseIf (Trust >= 26 And Trust <= 50) Then
-                                    Trust += 15
-                                Else Trust += 10
-                                End If
-                            End If
-                        End If
-                        lblPoint.Text = Trust & "%"
+                If (Len(lblFailed.Text) <= 3) Then
+                    If (Trust >= 0 And Trust <= 25) Then
+                        Trust += 40
+                    ElseIf (Trust >= 26 And Trust <= 50) Then
+                        Trust += 35
+                    Else Trust += 30
+                    End If
+                ElseIf (Len(lblFailed.Text) <= 6) Then
+                    If (Trust >= 0 And Trust <= 25) Then
+                        Trust += 30
+                    ElseIf (Trust >= 26 And Trust <= 50) Then
+                        Trust += 25
+                    Else Trust += 20
+                    End If
+                Else
+                    If (Trust >= 0 And Trust <= 25) Then
+                        Trust += 20
+                    ElseIf (Trust >= 26 And Trust <= 50) Then
+                        Trust += 15
+                    Else Trust += 10
                     End If
                 End If
             End If
+            lblPoint.Text = Trust & "%"
         End If
-
+        End If
+        End If
+        End If
     End Sub
 
     Private Sub Level1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress

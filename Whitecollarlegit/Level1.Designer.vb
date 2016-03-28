@@ -154,6 +154,7 @@ Partial Class Level1
         Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.Ep_1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.lblFailed)
         Me.Controls.Add(Me.lblWord4)
         Me.Controls.Add(Me.lblWord3)
         Me.Controls.Add(Me.lblWord2)
@@ -161,7 +162,6 @@ Partial Class Level1
         Me.Controls.Add(Me.lblPoint)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblWord1)
-        Me.Controls.Add(Me.lblFailed)
         Me.Controls.Add(Me.Label1)
         Me.KeyPreview = True
         Me.Name = "Level1"
