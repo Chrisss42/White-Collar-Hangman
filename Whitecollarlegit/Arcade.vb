@@ -12,6 +12,9 @@ Public Class Arcade
         buttonpoint.X = 140
         buttonpoint.Y = 420
         For x = 0 To 35
+            If x Mod 4 = 0 Then
+                buttonpoint.Y = 420
+            End If
             characters(x) = New Button
             characters(x).Width = 300
             characters(x).Height = 35
@@ -20,11 +23,9 @@ Public Class Arcade
             characters(x).ForeColor = Color.White
             characters(x).FlatStyle = FlatStyle.Flat
             characters(x).Font = myfont
+            buttonpoint.Y += 45
             AddHandler characters(x).Click, AddressOf Clicked
             Me.Controls.Add(characters(x))
-            If x Mod 4 = 0 Then
-                buttonpoint.Y = 420
-            End If
         Next
         characters(0).Text = "Peter Burke"
         characters(1).Text = "Sara Ellis"
@@ -73,7 +74,7 @@ Public Class Arcade
         characters(32).AccessibleDescription = "!"
         For x = 0 To 35
             characters(x).Enabled = False
-            characters(x).Hide()
+            characters(x).Visible = False
         Next
         Randomize()
         lblPoint.Text = ""
@@ -87,71 +88,78 @@ Public Class Arcade
         Else lblTime.Text -= 10
             incorrect += 1
         End If
-        lblPoint.Text = correct / incorrect
+        lblPoint.Text = correct - incorrect
         genPic()
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
+        incorrect = 0
+        correct = 0
         genPic()
+        lblTime.Text = 30
         Timer1.Start()
         btnStart.Enabled = False
     End Sub
 
     Private Sub genPic()
+        For x = 0 To 35
+            characters(x).Enabled = False
+            characters(x).Visible = False
+        Next
         Dim pic As Integer
-        pic = (9 * Rnd() - 1)
-        If pic = 1 Then
-            picChar.Image = imgChars.Images(1)
+        pic = 9 * Rnd()
+        If pic = 0 Then
+            picChar.Image = imgChars.Images(0)
             For x = 0 To 3
-                characters(x).Show()
+                characters(x).Visible = True
+                characters(x).Enabled = True
+            Next
+        ElseIf pic = 1
+            picChar.Image = imgChars.Images(1)
+            For x = 4 To 7
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         ElseIf pic = 2
             picChar.Image = imgChars.Images(2)
-            For x = 4 To 7
-                characters(x).Show()
+            For x = 8 To 11
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         ElseIf pic = 3
             picChar.Image = imgChars.Images(3)
-            For x = 8 To 11
-                characters(x).Show()
+            For x = 12 To 15
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         ElseIf pic = 4
             picChar.Image = imgChars.Images(4)
-            For x = 12 To 15
-                characters(x).Show()
+            For x = 16 To 19
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         ElseIf pic = 5
             picChar.Image = imgChars.Images(5)
-            For x = 16 To 19
-                characters(x).Show()
+            For x = 20 To 23
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         ElseIf pic = 6
             picChar.Image = imgChars.Images(6)
-            For x = 20 To 23
-                characters(x).Show()
+            For x = 24 To 27
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         ElseIf pic = 7
             picChar.Image = imgChars.Images(7)
-            For x = 24 To 27
-                characters(x).Show()
+            For x = 28 To 31
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         ElseIf pic = 8
             picChar.Image = imgChars.Images(8)
-            For x = 28 To 31
-                characters(x).Show()
-                characters(x).Enabled = True
-            Next
-        ElseIf pic = 9
-            picChar.Image = imgChars.Images(9)
             For x = 32 To 35
-                characters(x).Show()
+                characters(x).Visible = True
                 characters(x).Enabled = True
             Next
         End If
@@ -159,16 +167,18 @@ Public Class Arcade
 
     Private Sub Time_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblTime.Text -= 1
-        If lblTime.Text = 0 Then
-            Points = Points + (correct / incorrect)
-            MsgBox("Congrats, " & Name & " you got:" & vbCrLf & correct & "correct!" & vbCrLf & "&" & incorrect & "incorrect" & "Your score is: " & (correct / incorrect) & vbCrLf & "Press 'Start' to play again!")
+        If lblTime.Text <= 0 Then
+            Timer1.Stop()
+            Points = Points + (correct - incorrect)
+            MsgBox("Congrats, " & playerName & " you got: " & vbCrLf & correct & " correct!" & " & " & incorrect & " incorrect" & vbCrLf & "Your score is: " & (correct - incorrect) & vbCrLf & "Press 'Start' to play again!")
             btnStart.Enabled = True
+            lblPoint.Text = Points
         End If
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
-        MsgBox("Total points earned:" & Points)
-
+        Points = Points + (correct - incorrect)
+        MsgBox("Total points earned: " & Points)
         Me.Close()
         Form1.Show()
     End Sub

@@ -74,6 +74,7 @@ Public Class Level1
 
     Private Sub Clicked(sender As System.Object, e As System.EventArgs)
         guessletter = sender.text
+        sender.visible = False
         For x = 0 To 3
             If Words(0).Contains(guessletter) = False And Words(1).Contains(guessletter) = False And Words(2).Contains(guessletter) = False And Words(3).Contains(guessletter) = False Then
                 If Len(lblFailed.Text) = 9 Then
@@ -86,8 +87,8 @@ Public Class Level1
                         Me.Close()
                     End If
                 End If
-                lblErrors.Text = (Len(lblFailed.Text) + 1)
-                picJail.Image = Jailed.Images((Len(lblFailed.Text) + 1))
+                lblErrors.Text = Len(lblFailed.Text)
+                picJail.Image = Jailed.Images(Len(lblFailed.Text))
                 If lblFailed.Text.Contains(guessletter) = False Then
                     lblFailed.Text = lblFailed.Text & guessletter
                 End If
@@ -129,7 +130,7 @@ Public Class Level1
                                 End If
                             End If
                         End If
-                        MsgBox("Congrats, " & Name & " you passed!" & vbCrLf & "Peter's trust total: " & Trust & "%")
+                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust total: " & Trust & "%")
 
                         Me.Close()
                         Form1.Show()
@@ -140,5 +141,77 @@ Public Class Level1
     End Sub
 
     Private Sub Level1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+        guessletter = UCase(e.KeyChar)
+        For x = 0 To 25
+            If letters(x).Text = guessletter Then
+                letters(x).Visible = False
+            End If
+            If guessletter = " " Then
+                space.Visible = False
+            End If
+        Next
+        For x = 0 To 3
+            If Words(0).Contains(guessletter) = False And Words(1).Contains(guessletter) = False And Words(2).Contains(guessletter) = False And Words(3).Contains(guessletter) = False Then
+                If Len(lblFailed.Text) = 9 Then
+                    response = MsgBox("You lose one getaway. Buy more on The Street.", 4, "Defeated!")
+                    If response = 6 Then
+                        Me.Refresh()
+                    Else
+
+                        Form1.Show()
+                        Me.Close()
+                    End If
+                End If
+                lblErrors.Text = Len(lblFailed.Text)
+                picJail.Image = Jailed.Images(Len(lblFailed.Text))
+                If lblFailed.Text.Contains(guessletter) = False Then
+                    lblFailed.Text = lblFailed.Text & guessletter
+                End If
+            Else
+                letterpos = 0
+                Do While InStr(letterpos + 1, Words(x), guessletter) > 0
+                    letterpos = InStr(letterpos + 1, Words(x), guessletter)
+                    Mid(lblWords(x).Text, letterpos, 1) = guessletter
+                Loop
+            End If
+        Next
+
+        'Sorry for the cancerous if statements
+        If Not lblWords(0).Text.Contains("?") Then
+            If Not lblWords(1).Text.Contains("?") Then
+                If Not lblWords(2).Text.Contains("?") Then
+                    If Not lblWords(3).Text.Contains("?") Then
+                        If Trust <> 100 Then
+                            If (Len(lblFailed.Text) <= 3) Then
+                                If (Trust >= 0 And Trust <= 25) Then
+                                    Trust += 40
+                                ElseIf (Trust >= 26 And Trust <= 50) Then
+                                    Trust += 35
+                                Else Trust += 30
+                                End If
+                            ElseIf (Len(lblFailed.Text) <= 6) Then
+                                If (Trust >= 0 And Trust <= 25) Then
+                                    Trust += 30
+                                ElseIf (Trust >= 26 And Trust <= 50) Then
+                                    Trust += 25
+                                Else Trust += 20
+                                End If
+                            Else
+                                If (Trust >= 0 And Trust <= 25) Then
+                                    Trust += 20
+                                ElseIf (Trust >= 26 And Trust <= 50) Then
+                                    Trust += 15
+                                Else Trust += 10
+                                End If
+                            End If
+                        End If
+                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust total: " & Trust & "%")
+
+                        Me.Close()
+                        Form1.Show()
+                    End If
+                End If
+            End If
+        End If
     End Sub
 End Class

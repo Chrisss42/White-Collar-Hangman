@@ -62,6 +62,7 @@ Partial Class Arcade
         Me.picChar.Location = New System.Drawing.Point(140, 96)
         Me.picChar.Name = "picChar"
         Me.picChar.Size = New System.Drawing.Size(300, 300)
+        Me.picChar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picChar.TabIndex = 18
         Me.picChar.TabStop = False
         '
