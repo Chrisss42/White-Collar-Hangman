@@ -28,8 +28,6 @@ E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarle
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.exe
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.xml
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.pdb
-E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form1.resources
-E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Form2.resources
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Level1.resources
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Resources.resources
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.vbproj.GenerateResource.Cache
@@ -41,3 +39,6 @@ E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarle
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Arcade.resources
 C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Arcade.resources
 C:\Users\Total\Desktop\AyushGupta\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.frmMsg1.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.MainMenu.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Instructions.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Street.resources

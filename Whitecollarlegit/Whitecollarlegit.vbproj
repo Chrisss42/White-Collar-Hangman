@@ -78,17 +78,17 @@
     <Compile Include="Arcade.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Instructions.Designer.vb">
+      <DependentUpon>Instructions.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="Instructions.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMsg1.Designer.vb">
@@ -118,16 +118,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Street.Designer.vb">
+      <DependentUpon>Street.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Street.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Arcade.resx">
       <DependentUpon>Arcade.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Instructions.resx">
+      <DependentUpon>Instructions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMsg1.resx">
       <DependentUpon>frmMsg1.vb</DependentUpon>
@@ -140,6 +146,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Street.resx">
+      <DependentUpon>Street.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +180,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Arcade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

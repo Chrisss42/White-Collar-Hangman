@@ -8,7 +8,9 @@ Public Class Arcade
     Dim characters(35) As Button
     Dim correct As Integer
     Dim incorrect As Integer
+    Dim addPoints As Integer
     Private Sub Arcade_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Create all buttons then hide & disable all of them
         buttonpoint.X = 140
         buttonpoint.Y = 420
         For x = 0 To 35
@@ -82,26 +84,35 @@ Public Class Arcade
 
 
     Private Sub Clicked(sender As System.Object, e As System.EventArgs)
+        'If the answer is correct +10 sec and +1 correct, else -10 sec and +1 incorrect
         If sender.AccessibleDescription = "!" Then
             lblTime.Text += 10
             correct += 1
         Else lblTime.Text -= 10
             incorrect += 1
         End If
-        lblPoint.Text = correct - incorrect
+        addPoints = correct - incorrect
+        lblPoint.Text = Points + addPoints
         genPic()
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
+        'Reset incorrect/correct, and start the round
         incorrect = 0
         correct = 0
         genPic()
-        lblTime.Text = 30
+        'Checks upgrade
+        If ATime = True Then
+            lblTime.Text = 60
+        Else
+            lblTime.Text = 30
+        End If
         Timer1.Start()
         btnStart.Enabled = False
     End Sub
 
     Private Sub genPic()
+        'Sub routine to create picture and buttons associated with said picture
         For x = 0 To 35
             characters(x).Enabled = False
             characters(x).Visible = False
@@ -166,20 +177,29 @@ Public Class Arcade
     End Sub
 
     Private Sub Time_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        lblTime.Text -= 1
+        'Ticks the timer, if it is <= 0 then it shows your score. Checks for upgrade
+        If ATDep = True Then
+            lblTime.Text -= 0.5
+        Else lblTime.Text -= 1
+        End If
         If lblTime.Text <= 0 Then
             Timer1.Stop()
-            Points = Points + (correct - incorrect)
-            MsgBox("Congrats, " & playerName & " you got: " & vbCrLf & correct & " correct!" & " & " & incorrect & " incorrect" & vbCrLf & "Your score is: " & (correct - incorrect) & vbCrLf & "Press 'Start' to play again!")
+            addPoints = correct - incorrect
+            Points = Points + addPoints
+            MsgBox("Congrats, " & playerName & " you got: " & vbCrLf & correct & " correct!" & " & " & incorrect & " incorrect" & vbCrLf & "Your score is: " & addPoints & vbCrLf & "Press 'Start' to play again!")
             btnStart.Enabled = True
-            lblPoint.Text = Points
-        End If
+                lblPoint.Text = Points
+            End If
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
-        Points = Points + (correct - incorrect)
+        'Shows total points before quitting
+        If ADouble = True Then
+            addPoints = addPoints * 2
+        End If
+        Points = Points + addPoints
         MsgBox("Total points earned: " & Points)
         Me.Close()
-        Form1.Show()
+        MainMenu.Show()
     End Sub
 End Class
