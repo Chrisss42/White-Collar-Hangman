@@ -36,6 +36,7 @@ Partial Class Level1
         Me.lblWord4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblErrors = New System.Windows.Forms.Label()
+        Me.btnMain = New System.Windows.Forms.Button()
         CType(Me.picJail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -173,6 +174,16 @@ Partial Class Level1
         Me.lblErrors.TabIndex = 22
         Me.lblErrors.Text = "0"
         '
+        'btnMain
+        '
+        Me.btnMain.Font = New System.Drawing.Font("Lucida Console", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMain.Location = New System.Drawing.Point(978, 633)
+        Me.btnMain.Name = "btnMain"
+        Me.btnMain.Size = New System.Drawing.Size(274, 36)
+        Me.btnMain.TabIndex = 37
+        Me.btnMain.Text = "Back to Main Menu"
+        Me.btnMain.UseVisualStyleBackColor = True
+        '
         'Level1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -180,6 +191,7 @@ Partial Class Level1
         Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.Ep_11
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.btnMain)
         Me.Controls.Add(Me.lblErrors)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblFailed)
@@ -212,4 +224,5 @@ Partial Class Level1
     Friend WithEvents lblWord4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblErrors As Label
+    Friend WithEvents btnMain As Button
 End Class

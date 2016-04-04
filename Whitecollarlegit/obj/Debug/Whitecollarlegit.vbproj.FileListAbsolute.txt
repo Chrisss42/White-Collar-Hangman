@@ -46,3 +46,5 @@ E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarle
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\bin\Debug\Whitecollarlegit.application
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.exe.manifest
 E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.application
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.Level2.resources
+E:\Visual Studio Community 2015\VB\VBProjects\White-Collar-Hangman\Whitecollarlegit\obj\Debug\Whitecollarlegit.frmMsg2.resources
