@@ -15,6 +15,12 @@ Public Class MainMenu
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Get player's name into a global variable
         playerName = InputBox("Input Name: ", "Name")
+        'Play opening music
+        PlayBGMusic()
+    End Sub
+
+    Sub PlayBGMusic()
+        'My.Computer.Audio.Play(My.Resources.WCOpening)
     End Sub
 
     Private Sub BtnNavInstructions_Click(sender As Object, e As EventArgs) Handles BtnNavInstructions.Click

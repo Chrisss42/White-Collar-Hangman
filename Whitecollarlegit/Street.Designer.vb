@@ -33,6 +33,11 @@ Partial Class Street
         Me.btnCHandicap = New System.Windows.Forms.Button()
         Me.lblTrust = New System.Windows.Forms.Label()
         Me.lblPoints = New System.Windows.Forms.Label()
+        Me.btnCGetaway = New System.Windows.Forms.Button()
+        Me.btnPtoT = New System.Windows.Forms.Button()
+        Me.btnTtoP = New System.Windows.Forms.Button()
+        Me.txtTtoP = New System.Windows.Forms.TextBox()
+        Me.txtPtoT = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnMain
@@ -155,6 +160,50 @@ Partial Class Street
         Me.lblPoints.TabIndex = 13
         Me.lblPoints.Text = "Points:"
         '
+        'btnCGetaway
+        '
+        Me.btnCGetaway.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCGetaway.Location = New System.Drawing.Point(344, 272)
+        Me.btnCGetaway.Name = "btnCGetaway"
+        Me.btnCGetaway.Size = New System.Drawing.Size(121, 58)
+        Me.btnCGetaway.TabIndex = 14
+        Me.btnCGetaway.Text = "+1 Getaway (50% Trust)"
+        Me.btnCGetaway.UseVisualStyleBackColor = True
+        '
+        'btnPtoT
+        '
+        Me.btnPtoT.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPtoT.Location = New System.Drawing.Point(532, 356)
+        Me.btnPtoT.Name = "btnPtoT"
+        Me.btnPtoT.Size = New System.Drawing.Size(121, 58)
+        Me.btnPtoT.TabIndex = 15
+        Me.btnPtoT.Text = "Convert Points to Trust"
+        Me.btnPtoT.UseVisualStyleBackColor = True
+        '
+        'btnTtoP
+        '
+        Me.btnTtoP.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTtoP.Location = New System.Drawing.Point(226, 356)
+        Me.btnTtoP.Name = "btnTtoP"
+        Me.btnTtoP.Size = New System.Drawing.Size(121, 58)
+        Me.btnTtoP.TabIndex = 16
+        Me.btnTtoP.Text = "Convert Trust to Points"
+        Me.btnTtoP.UseVisualStyleBackColor = True
+        '
+        'txtTtoP
+        '
+        Me.txtTtoP.Location = New System.Drawing.Point(120, 377)
+        Me.txtTtoP.Name = "txtTtoP"
+        Me.txtTtoP.Size = New System.Drawing.Size(100, 20)
+        Me.txtTtoP.TabIndex = 17
+        '
+        'txtPtoT
+        '
+        Me.txtPtoT.Location = New System.Drawing.Point(426, 377)
+        Me.txtPtoT.Name = "txtPtoT"
+        Me.txtPtoT.Size = New System.Drawing.Size(100, 20)
+        Me.txtPtoT.TabIndex = 18
+        '
         'Street
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -162,6 +211,11 @@ Partial Class Street
         Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.a3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(692, 521)
+        Me.Controls.Add(Me.txtPtoT)
+        Me.Controls.Add(Me.txtTtoP)
+        Me.Controls.Add(Me.btnTtoP)
+        Me.Controls.Add(Me.btnPtoT)
+        Me.Controls.Add(Me.btnCGetaway)
         Me.Controls.Add(Me.lblPoints)
         Me.Controls.Add(Me.lblTrust)
         Me.Controls.Add(Me.btnCHandicap)
@@ -191,4 +245,9 @@ Partial Class Street
     Friend WithEvents btnCHandicap As Button
     Friend WithEvents lblTrust As Label
     Friend WithEvents lblPoints As Label
+    Friend WithEvents btnCGetaway As Button
+    Friend WithEvents btnPtoT As Button
+    Friend WithEvents btnTtoP As Button
+    Friend WithEvents txtTtoP As TextBox
+    Friend WithEvents txtPtoT As TextBox
 End Class

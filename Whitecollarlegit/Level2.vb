@@ -14,8 +14,13 @@
     Dim response As Integer
     Dim addTrust As Integer
     Private Sub Level1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Getaways = -1 Then
+            MsgBox("Sorry you are in prison. Buy more Getaways on The Street")
+            Me.Close()
+            Street.Show()
+        End If
+        'My.Computer.Audio.Play(My.Resources.WCBTDH)
         frmMsg2.ShowDialog(Me)
-        btnMain.Enabled = False
         picJail.BackgroundImage = Jailed.Images(0)
         'Creates the buttons
         buttonpoint.X = 835
@@ -144,8 +149,8 @@
                                     addTrust = addTrust * 2
                                 End If
                                 Trust = Trust + addTrust
-                                MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & "Peter's trust total: " & Trust & "%")
-
+                                MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & vbCrLf & "Peter's trust total: " & Trust & "%")
+                                MsgBox("More levels to come...")
                                 Me.Close()
                                 MainMenu.Show()
                             End If
@@ -238,8 +243,8 @@
                                     addTrust = addTrust * 2
                                 End If
                                 Trust = Trust + addTrust
-                                MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & "Peter's trust total: " & Trust & "%")
-
+                                MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & vbCrLf & "Peter's trust total: " & Trust & "%")
+                                MsgBox("More levels to come...")
                                 Me.Close()
                                 MainMenu.Show()
                             End If
@@ -254,13 +259,4 @@
         Me.Close()
         MainMenu.Show()
     End Sub
-
-    Private Sub btnMain_MouseHover(sender As Object, e As EventArgs) Handles btnMain.MouseHover
-        btnMain.Enabled = True
-    End Sub
-
-    Private Sub btnMain_MouseLeave(sender As Object, e As EventArgs) Handles btnMain.MouseLeave
-        btnMain.Enabled = False
-    End Sub
-
 End Class

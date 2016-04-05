@@ -1,5 +1,6 @@
 ﻿Public Module GlobalVariables
     Public Trust As Integer
+    Public Getaways As Integer
 End Module
 Public Class Level1
     Public letters(26) As Button
@@ -16,7 +17,12 @@ Public Class Level1
     Dim response As Integer
     Dim addTrust As Integer
     Private Sub Level1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        btnMain.Enabled = False
+        If Getaways = -1 Then
+            MsgBox("Sorry you are in prison. Buy more Getaways on The Street")
+            Me.Close()
+            Street.Show()
+        End If
+        'My.Computer.Audio.Play(My.Resources.WCBTDH)
         frmMsg1.ShowDialog(Me)
         picJail.BackgroundImage = Jailed.Images(0)
         'Creates the buttons
@@ -78,6 +84,7 @@ Public Class Level1
                     MsgBox("You lose one getaway. Buy more on The Street.")
                     MainMenu.Show()
                     Me.Close()
+                    Getaways -= 1
                 End If
                 lblErrors.Text = Len(lblFailed.Text)
                 picJail.Image = Jailed.Images(Len(lblFailed.Text))
@@ -140,7 +147,8 @@ Public Class Level1
                             addTrust = addTrust * 2
                         End If
                         Trust = Trust + addTrust
-                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & "Peter's trust total: " & Trust & "%")                        Me.Close()
+                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & vbCrLf & "Peter's trust total: " & Trust & "%")
+                        Me.Close()
                         Level2.Show()
                     End If
                 End If
@@ -151,7 +159,7 @@ Public Class Level1
     Private Sub Level1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         'Same as above, but for keyboard!
         guessletter = UCase(e.KeyChar)
-        For x = 0 To 25
+        For x = 0 To 26
             If letters(x).Text = guessletter Then
                 letters(x).Visible = False
             End If
@@ -159,13 +167,10 @@ Public Class Level1
         For x = 0 To 3
             If Words(0).Contains(guessletter) = False And Words(1).Contains(guessletter) = False And Words(2).Contains(guessletter) = False And Words(3).Contains(guessletter) = False Then
                 If Len(lblFailed.Text) = 9 Then
-                    response = MsgBox("You lose one getaway. Buy more on The Street.", 4, "Defeated!")
-                    If response = 6 Then
-                        Me.Refresh()
-                    Else
-                        MainMenu.Show()
-                        Me.Close()
-                    End If
+                    MsgBox("You lose one getaway. Buy more on The Street.")
+                    MainMenu.Show()
+                    Me.Close()
+                    Getaways -= 1
                 End If
                 lblErrors.Text = Len(lblFailed.Text)
                 picJail.Image = Jailed.Images(Len(lblFailed.Text))
@@ -228,8 +233,7 @@ Public Class Level1
                             addTrust = addTrust * 2
                         End If
                         Trust = Trust + addTrust
-                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & "Peter's trust total: " & Trust & "%")
-
+                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & vbCrLf & "Peter's trust total: " & Trust & "%")
                         Me.Close()
                         Level2.Show()
                     End If
@@ -241,13 +245,5 @@ Public Class Level1
     Private Sub btnMain_Click(sender As Object, e As EventArgs) Handles btnMain.Click
         Me.Close()
         MainMenu.Show()
-    End Sub
-
-    Private Sub btnMain_MouseHover(sender As Object, e As EventArgs) Handles btnMain.MouseHover
-        btnMain.Enabled = True
-    End Sub
-
-    Private Sub btnMain_MouseLeave(sender As Object, e As EventArgs) Handles btnMain.MouseLeave
-        btnMain.Enabled = False
     End Sub
 End Class

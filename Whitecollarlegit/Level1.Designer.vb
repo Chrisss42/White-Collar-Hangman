@@ -37,6 +37,7 @@ Partial Class Level1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblErrors = New System.Windows.Forms.Label()
         Me.btnMain = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.picJail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -184,6 +185,15 @@ Partial Class Level1
         Me.btnMain.Text = "Back to Main Menu"
         Me.btnMain.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(748, 212)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Level1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -198,11 +208,12 @@ Partial Class Level1
         Me.Controls.Add(Me.lblWord4)
         Me.Controls.Add(Me.lblWord3)
         Me.Controls.Add(Me.lblWord2)
-        Me.Controls.Add(Me.picJail)
         Me.Controls.Add(Me.lblPoint)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblWord1)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.picJail)
+        Me.Controls.Add(Me.Button1)
         Me.KeyPreview = True
         Me.Name = "Level1"
         Me.Text = "Level1"
@@ -225,4 +236,5 @@ Partial Class Level1
     Friend WithEvents Label2 As Label
     Friend WithEvents lblErrors As Label
     Friend WithEvents btnMain As Button
+    Friend WithEvents Button1 As Button
 End Class

@@ -182,10 +182,13 @@ Public Class Arcade
             lblTime.Text -= 0.5
         Else lblTime.Text -= 1
         End If
+        If lblTime.Text <= 30 Then
+            'Plays 30 sec music
+            ' My.Computer.Audio.Play(My.Resources.WCCredit)
+        Else My.Computer.Audio.Stop()
+        End If
         If lblTime.Text <= 0 Then
             Timer1.Stop()
-            addPoints = correct - incorrect
-            Points = Points + addPoints
             MsgBox("Congrats, " & playerName & " you got: " & vbCrLf & correct & " correct!" & " & " & incorrect & " incorrect" & vbCrLf & "Your score is: " & addPoints & vbCrLf & "Press 'Start' to play again!")
             btnStart.Enabled = True
                 lblPoint.Text = Points

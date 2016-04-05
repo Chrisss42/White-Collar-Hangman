@@ -86,4 +86,49 @@ Public Class Street
             lblTrust.Text = "Trust: " & Trust & "%"
         End If
     End Sub
+
+    Private Sub btnCGetaway_Click(sender As Object, e As EventArgs) Handles btnCGetaway.Click
+        If Trust >= 50 Then
+            Trust -= 50
+            Getaways += 1
+            lblPoints.Text = "Points: " & Points
+            lblTrust.Text = "Trust: " & Trust & "%"
+        ElseIf Getaways <= 0 Then
+            MsgBox("Try to play arcade and convert points to trust.")
+        End If
+    End Sub
+
+    Private Sub btnTtoP_Click(sender As Object, e As EventArgs) Handles btnTtoP.Click
+        If (IsNumeric(txtTtoP.Text) = True) Then
+            Dim TrustConvert As Integer
+            TrustConvert = txtTtoP.Text
+            If TrustConvert > Trust Then
+                MsgBox("Not enough Trust")
+            Else
+                Trust -= TrustConvert
+                Points += TrustConvert
+                lblPoints.Text = "Points: " & Points
+                lblTrust.Text = "Trust: " & Trust & "%"
+            End If
+        Else MsgBox("Invalid entry, input a number.")
+        End If
+        txtTtoP.Text = ""
+    End Sub
+
+    Private Sub btnPtoT_Click(sender As Object, e As EventArgs) Handles btnPtoT.Click
+        If (IsNumeric(txtPtoT.Text) = True) Then
+            Dim PointConvert As Integer
+            PointConvert = txtPtoT.Text
+            If PointConvert > Points Then
+                MsgBox("Not enough Points")
+            Else
+                Points -= PointConvert
+                Trust += PointConvert
+                lblPoints.Text = "Points: " & Points
+                lblTrust.Text = "Trust: " & Trust & "%"
+            End If
+        Else MsgBox("Invalid entry, input a number.")
+        End If
+        txtPtoT.Text = ""
+    End Sub
 End Class
