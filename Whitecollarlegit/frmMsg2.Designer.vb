@@ -65,7 +65,7 @@ Partial Class frmMsg2
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Name = "frmMsg2"
-        Me.Text = "frmMsg2"
+        Me.Text = "Episode 2 Briefing"
         Me.ResumeLayout(False)
 
     End Sub

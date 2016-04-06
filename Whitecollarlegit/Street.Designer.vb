@@ -228,7 +228,7 @@ Partial Class Street
         Me.Controls.Add(Me.btnATime)
         Me.Controls.Add(Me.btnMain)
         Me.Name = "Street"
-        Me.Text = "Street"
+        Me.Text = "The Street"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

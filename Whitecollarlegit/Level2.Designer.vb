@@ -242,7 +242,7 @@ Partial Class Level2
         Me.Controls.Add(Me.Button1)
         Me.KeyPreview = True
         Me.Name = "Level2"
-        Me.Text = "Level2"
+        Me.Text = "Level 2"
         CType(Me.picJail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

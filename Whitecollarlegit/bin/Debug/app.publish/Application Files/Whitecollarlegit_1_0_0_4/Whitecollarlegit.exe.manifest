@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Whitecollarlegit.exe" version="1.0.0.4" publicKeyToken="848142cd6c4855a1" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Whitecollarlegit" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Whitecollarlegit.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Whitecollarlegit.exe" size="14692280">
+      <assemblyIdentity name="Whitecollarlegit" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>FH7fgoCEV82hbIO5D1YZSHkUZlzCnIKvF8C4OXfHL3s=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Whitecollarlegit.exe.config" size="188">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>j5XMowm9qYcyNWR87Ke1KpLLXBlaYAR38CaZywZFE9o=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=AYUSH-PC\Ayush" issuerKeyHash="e71759daaaba7dc056d290913d593f8303f21f46" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>J8zqfPoL2DUQHhmRpKUqjcZsLnzmGktwhgSGAhXZVQ0=</DigestValue></Reference></SignedInfo><SignatureValue>yvUbKPn5ZpzF79XaRFOdeDffU+5sN0bpKV0dq75isBaem7Jp88Mbzha9ctu+Svp95nme+YNz63AL4vWedY+vF7uTC46K5I647j8LOcnq2DuvFzucsHJPGJ3yp3qFfSxNJ8mdtz7ms0Rc/DDvmD4AzxVse3T8NiJvobCgbAEaGug=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0WLpRidB/wXFI6cTZB11RL7w4Jhz8Aw9ycpFjaJ+1suUqO5UK+TIHCFbcMEt9Q3E8QlnPqhKJ26IGjOOmJt6UBiYUO1POkVk0dd0YzI9yZd6rbVOu+5ZH4Nb2Dq7MQLIAGzZFi3O4mY2I3i17MnDpIHLLsOdFWj2T6OM3rZg6Qc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0d55d91502860486704b1ae67c2e6cc68d2aa5a491191e1035d80bfa7ceacc27" Description="" Url=""><as:assemblyIdentity name="Whitecollarlegit.exe" version="1.0.0.4" publicKeyToken="848142cd6c4855a1" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=AYUSH-PC\Ayush</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>XKLdTlJEwWVXkruUrcRsoyiWlpSH4JfivoKOzV4uKtA=</DigestValue></Reference></SignedInfo><SignatureValue>c4bFvw7PqbH7V2LxSFxbBB+/1yt2lKiuweXt4tuUwIoE93JumF+HJkAaSWxzxLvpg14P/A1iofW+HP8/q+roGB2HSulLaM6TxE57zMP+hWWHmV4flaii9ayNPNVDqtXlzWIrorwA1YV5nhtKvE7IgwGn018iVuAwcMVvijsSJKQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0WLpRidB/wXFI6cTZB11RL7w4Jhz8Aw9ycpFjaJ+1suUqO5UK+TIHCFbcMEt9Q3E8QlnPqhKJ26IGjOOmJt6UBiYUO1POkVk0dd0YzI9yZd6rbVOu+5ZH4Nb2Dq7MQLIAGzZFi3O4mY2I3i17MnDpIHLLsOdFWj2T6OM3rZg6Qc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQHS0vvmZTtZJB4/r3ubIiEjANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwAQQBZAFUAUwBIAC0AUABDAFwAQQB5AHUAcwBoMB4XDTE2MDQwMzIxNTY1OVoXDTE3MDQwNDAzNTY1OVowJzElMCMGA1UEAx4cAEEAWQBVAFMASAAtAFAAQwBcAEEAeQB1AHMAaDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA0WLpRidB/wXFI6cTZB11RL7w4Jhz8Aw9ycpFjaJ+1suUqO5UK+TIHCFbcMEt9Q3E8QlnPqhKJ26IGjOOmJt6UBiYUO1POkVk0dd0YzI9yZd6rbVOu+5ZH4Nb2Dq7MQLIAGzZFi3O4mY2I3i17MnDpIHLLsOdFWj2T6OM3rZg6QcCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBAklHuEbJLQXIu0l9GjtqyCjGxiIB6afbxCMtIA3Dh+Gg3T1nmPKXHD14DcV46AX0Degk0DONuXUHoobPtoJhb05apxAC0U4uvnE6dQUY47T3KkTBLxSjy1tu+gXx0zM6TUpJ7lBX5zSTO7/LPLfGsIaYqmgdqWnxyIKjF7lZ2YA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
