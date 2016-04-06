@@ -1,23 +1,25 @@
-﻿Public Module GlobalVariables
-    Public Trust As Integer
-    Public Getaways As Integer
+﻿'By Ayush Gupta and Chris Green (31/3/2016)
+'Level one of the campaign. Gain trust from winning to spend in the Street. Users can guess the words based on the show White Collar.
+Public Module GlobalVariables
+    Public intTrust As Integer
+    Public intGetaways As Integer
+    Public intLevel As Integer = 0
 End Module
 Public Class Level1
     Public letters(26) As Button
-    Dim accept As Integer
-    Dim buttonpoint As Point
-    Dim qwerty As String = "QWERTYUIOPASDFGHJKLZXCVBNM "
+    Dim ButtonPoint As Point
+    Dim strQWERTY As String = "QWERTYUIOPASDFGHJKLZXCVBNM "
     Dim myfont As Font = New Font(FontFamily.GenericSansSerif, 14.0F, FontStyle.Bold)
-    Dim wordnum As Integer
-    Dim guessletter As String
+    Dim intWordNum As Integer
+    Dim strGuessLetter As String
     Dim Words(3) As String
-    Dim correct As Boolean
-    Dim letterpos As Integer
+    Dim boolCorrect As Boolean
+    Dim intLetterPos As Integer
     Dim lblWords(3) As Label
-    Dim response As Integer
-    Dim addTrust As Integer
+    Dim intAddTrust As Integer
     Private Sub Level1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Getaways = -1 Then
+        'If you are in prison, you can't play Campaign mode.
+        If intGetaways = -1 Then
             MsgBox("Sorry you are in prison. Buy more Getaways on The Street")
             Me.Close()
             Street.Show()
@@ -26,33 +28,33 @@ Public Class Level1
         frmMsg1.ShowDialog(Me)
         picJail.BackgroundImage = Jailed.Images(0)
         'Creates the buttons
-        buttonpoint.X = 835
-        buttonpoint.Y = 95
+        ButtonPoint.X = 835
+        ButtonPoint.Y = 95
         lblFailed.Text = ""
-        letterpos = 0
+        intLetterPos = 0
         'Define buttons in button array
         For x = 0 To 26
             letters(x) = New Button
             letters(x).Width = 35
             letters(x).Height = 35
-            letters(x).Location = buttonpoint
-            buttonpoint.X = buttonpoint.X + 40
-            letters(x).Text = Mid(qwerty, (x + 1), 1)
+            letters(x).Location = ButtonPoint
+            ButtonPoint.X = ButtonPoint.X + 40
+            letters(x).Text = Mid(strQWERTY, (x + 1), 1)
             letters(x).BackColor = Color.DodgerBlue
             letters(x).ForeColor = Color.White
             letters(x).FlatStyle = FlatStyle.Flat
             letters(x).Font = myfont
             If x = 9 Then
-                buttonpoint.Y = 135
-                buttonpoint.X = 855
+                ButtonPoint.Y = 135
+                ButtonPoint.X = 855
             End If
             If x = 18 Then
-                buttonpoint.Y = 175
-                buttonpoint.X = 875
+                ButtonPoint.Y = 175
+                ButtonPoint.X = 875
             End If
             If x = 25 Then
-                buttonpoint.X = 955
-                buttonpoint.Y = 215
+                ButtonPoint.X = 955
+                ButtonPoint.Y = 215
             End If
             If x = 26 Then
                 letters(x).Width = 195
@@ -71,32 +73,32 @@ Public Class Level1
         lblWords(1) = lblWord2
         lblWords(2) = lblWord3
         lblWords(3) = lblWord4
-        lblPoint.Text = Trust & "%"
+        lblPoint.Text = intTrust & "%"
     End Sub
 
     Private Sub Clicked(sender As System.Object, e As System.EventArgs)
         'Checks if the letter is in any of the labels; if not, adds letter to failed guesses and adds one to the picture
-        guessletter = sender.text
+        strGuessLetter = sender.text
         sender.visible = False
         For x = 0 To 3
-            If Words(0).Contains(guessletter) = False And Words(1).Contains(guessletter) = False And Words(2).Contains(guessletter) = False And Words(3).Contains(guessletter) = False Then
+            If Words(0).Contains(strGuessLetter) = False And Words(1).Contains(strGuessLetter) = False And Words(2).Contains(strGuessLetter) = False And Words(3).Contains(strGuessLetter) = False Then
                 If Len(lblFailed.Text) = 9 Then
                     MsgBox("You lose one getaway. Buy more on The Street.")
                     MainMenu.Show()
                     Me.Close()
-                    Getaways -= 1
+                    intGetaways -= 1
                 End If
                 lblErrors.Text = Len(lblFailed.Text)
                 picJail.Image = Jailed.Images(Len(lblFailed.Text))
-                If lblFailed.Text.Contains(guessletter) = False Then
-                    lblFailed.Text = lblFailed.Text & guessletter
+                If lblFailed.Text.Contains(strGuessLetter) = False Then
+                    lblFailed.Text = lblFailed.Text & strGuessLetter
                 End If
             Else
-                letterpos = 0
+                intLetterPos = 0
                 'Makes sure if there are multiple letters of the same value, they are revealed
-                Do While InStr(letterpos + 1, Words(x), guessletter) > 0
-                    letterpos = InStr(letterpos + 1, Words(x), guessletter)
-                    Mid(lblWords(x).Text, letterpos, 1) = guessletter
+                Do While InStr(intLetterPos + 1, Words(x), strGuessLetter) > 0
+                    intLetterPos = InStr(intLetterPos + 1, Words(x), strGuessLetter)
+                    Mid(lblWords(x).Text, intLetterPos, 1) = strGuessLetter
                 Loop
             End If
         Next
@@ -106,48 +108,49 @@ Public Class Level1
             If Not lblWords(1).Text.Contains("?") Then
                 If Not lblWords(2).Text.Contains("?") Then
                     If Not lblWords(3).Text.Contains("?") Then
-                        'Checks handicap upgrade and gives points without a handicap
+                        'Checks handicap upgrade and gives points without a handicap (not less if they have some, makes it possible to get > 100)
                         If CHandicap = True Then
                             If (Len(lblFailed.Text) <= 3) Then
-                                addTrust += 40
+                                intAddTrust += 40
                             ElseIf (Len(lblFailed.Text) <= 6) Then
-                                addTrust += 30
-                            Else addTrust += 20
+                                intAddTrust += 30
+                            Else intAddTrust += 20
                             End If
                         End If
                         'Gives trust based on amount of letters the player got wrong and how much they already had
                         If CHandicap = False Then
-                            If Trust <> 100 Then
+                            If intTrust <> 100 Then
                                 If (Len(lblFailed.Text) <= 3) Then
-                                    If (Trust >= 0 And Trust <= 25) Then
-                                        addTrust += 40
-                                    ElseIf (Trust >= 26 And Trust <= 50) Then
-                                        addTrust += 35
-                                    Else addTrust += 30
+                                    If (intTrust >= 0 And intTrust <= 25) Then
+                                        intAddTrust += 40
+                                    ElseIf (intTrust >= 26 And intTrust <= 50) Then
+                                        intAddTrust += 35
+                                    Else intAddTrust += 30
                                     End If
                                 ElseIf (Len(lblFailed.Text) <= 6) Then
-                                    If (Trust >= 0 And Trust <= 25) Then
-                                        addTrust += 30
-                                    ElseIf (Trust >= 26 And Trust <= 50) Then
-                                        addTrust += 25
-                                    Else addTrust += 20
+                                    If (intTrust >= 0 And intTrust <= 25) Then
+                                        intAddTrust += 30
+                                    ElseIf (intTrust >= 26 And intTrust <= 50) Then
+                                        intAddTrust += 25
+                                    Else intAddTrust += 20
                                     End If
                                 Else
-                                    If (Trust >= 0 And Trust <= 25) Then
-                                        addTrust += 20
-                                    ElseIf (Trust >= 26 And Trust <= 50) Then
-                                        addTrust += 15
-                                    Else addTrust += 10
+                                    If (intTrust >= 0 And intTrust <= 25) Then
+                                        intAddTrust += 20
+                                    ElseIf (intTrust >= 26 And intTrust <= 50) Then
+                                        intAddTrust += 15
+                                    Else intAddTrust += 10
                                     End If
                                 End If
                             End If
                         End If
                         'Shows trust earned, Doubles it if you have such upgrade
                         If CDTrust = True Then
-                            addTrust = addTrust * 2
+                            intAddTrust = intAddTrust * 2
                         End If
-                        Trust = Trust + addTrust
-                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & vbCrLf & "Peter's trust total: " & Trust & "%")
+                        intTrust = intTrust + intAddTrust
+                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & intAddTrust & "%" & vbCrLf & "Peter's trust total: " & intTrust & "%")
+                        intLevel = 1
                         Me.Close()
                         Level2.Show()
                     End If
@@ -158,31 +161,32 @@ Public Class Level1
 
     Private Sub Level1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         'Same as above, but for keyboard!
-        guessletter = UCase(e.KeyChar)
+        'Checks key and gets rid of appropriate button on the screen.
+        strGuessLetter = UCase(e.KeyChar)
         For x = 0 To 26
-            If letters(x).Text = guessletter Then
+            If letters(x).Text = strGuessLetter Then
                 letters(x).Visible = False
             End If
         Next
         For x = 0 To 3
-            If Words(0).Contains(guessletter) = False And Words(1).Contains(guessletter) = False And Words(2).Contains(guessletter) = False And Words(3).Contains(guessletter) = False Then
+            If Words(0).Contains(strGuessLetter) = False And Words(1).Contains(strGuessLetter) = False And Words(2).Contains(strGuessLetter) = False And Words(3).Contains(strGuessLetter) = False Then
                 If Len(lblFailed.Text) = 9 Then
                     MsgBox("You lose one getaway. Buy more on The Street.")
                     MainMenu.Show()
                     Me.Close()
-                    Getaways -= 1
+                    intGetaways -= 1
                 End If
                 lblErrors.Text = Len(lblFailed.Text)
                 picJail.Image = Jailed.Images(Len(lblFailed.Text))
-                If lblFailed.Text.Contains(guessletter) = False Then
-                    lblFailed.Text = lblFailed.Text & guessletter
+                If lblFailed.Text.Contains(strGuessLetter) = False Then
+                    lblFailed.Text = lblFailed.Text & strGuessLetter
                 End If
             Else
-                letterpos = 0
+                intLetterPos = 0
                 'Makes sure if there are multiple letters of the same value, they are revealed
-                Do While InStr(letterpos + 1, Words(x), guessletter) > 0
-                    letterpos = InStr(letterpos + 1, Words(x), guessletter)
-                    Mid(lblWords(x).Text, letterpos, 1) = guessletter
+                Do While InStr(intLetterPos + 1, Words(x), strGuessLetter) > 0
+                    intLetterPos = InStr(intLetterPos + 1, Words(x), strGuessLetter)
+                    Mid(lblWords(x).Text, intLetterPos, 1) = strGuessLetter
                 Loop
             End If
         Next
@@ -195,45 +199,46 @@ Public Class Level1
                         'Checks handicap upgrade and gives points without a handicap
                         If CHandicap = True Then
                             If (Len(lblFailed.Text) <= 3) Then
-                                addTrust += 40
+                                intAddTrust += 40
                             ElseIf (Len(lblFailed.Text) <= 6) Then
-                                addTrust += 30
-                            Else addTrust += 20
+                                intAddTrust += 30
+                            Else intAddTrust += 20
                             End If
                         End If
                         'Gives trust based on amount of letters the player got wrong and how much they already had
                         If CHandicap = False Then
-                            If Trust <> 100 Then
+                            If intTrust <> 100 Then
                                 If (Len(lblFailed.Text) <= 3) Then
-                                    If (Trust >= 0 And Trust <= 25) Then
-                                        addTrust += 40
-                                    ElseIf (Trust >= 26 And Trust <= 50) Then
-                                        addTrust += 35
-                                    Else addTrust += 30
+                                    If (intTrust >= 0 And intTrust <= 25) Then
+                                        intAddTrust += 40
+                                    ElseIf (intTrust >= 26 And intTrust <= 50) Then
+                                        intAddTrust += 35
+                                    Else intAddTrust += 30
                                     End If
                                 ElseIf (Len(lblFailed.Text) <= 6) Then
-                                    If (Trust >= 0 And Trust <= 25) Then
-                                        addTrust += 30
-                                    ElseIf (Trust >= 26 And Trust <= 50) Then
-                                        addTrust += 25
-                                    Else addTrust += 20
+                                    If (intTrust >= 0 And intTrust <= 25) Then
+                                        intAddTrust += 30
+                                    ElseIf (intTrust >= 26 And intTrust <= 50) Then
+                                        intAddTrust += 25
+                                    Else intAddTrust += 20
                                     End If
                                 Else
-                                    If (Trust >= 0 And Trust <= 25) Then
-                                        addTrust += 20
-                                    ElseIf (Trust >= 26 And Trust <= 50) Then
-                                        addTrust += 15
-                                    Else addTrust += 10
+                                    If (intTrust >= 0 And intTrust <= 25) Then
+                                        intAddTrust += 20
+                                    ElseIf (intTrust >= 26 And intTrust <= 50) Then
+                                        intAddTrust += 15
+                                    Else intAddTrust += 10
                                     End If
                                 End If
                             End If
                         End If
                         'Shows trust earned, Doubles it if you have such upgrade
                         If CDTrust = True Then
-                            addTrust = addTrust * 2
+                            intAddTrust = intAddTrust * 2
                         End If
-                        Trust = Trust + addTrust
-                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & addTrust & "%" & vbCrLf & "Peter's trust total: " & Trust & "%")
+                        intTrust = intTrust + intAddTrust
+                        MsgBox("Congrats, " & playerName & " you passed!" & vbCrLf & "Peter's trust gained: " & intAddTrust & "%" & vbCrLf & "Peter's trust total: " & intTrust & "%")
+                        intLevel = 1
                         Me.Close()
                         Level2.Show()
                     End If
@@ -243,6 +248,11 @@ Public Class Level1
     End Sub
 
     Private Sub btnMain_Click(sender As Object, e As EventArgs) Handles btnMain.Click
+        'Go back to main menu
+        'Refreshes the labels on the main menu
+        My.Forms.MainMenu.lblTrust.Text = "Trust: " & intTrust & "%"
+        My.Forms.MainMenu.lblPoints.Text = "Points: " & intPoints
+        My.Forms.MainMenu.lblLevel.Text = "Campaign Level: " & intLevel
         Me.Close()
         MainMenu.Show()
     End Sub

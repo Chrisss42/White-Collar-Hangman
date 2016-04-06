@@ -122,9 +122,9 @@ Partial Class Level1
         '
         Me.lblWord2.BackColor = System.Drawing.Color.White
         Me.lblWord2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWord2.Location = New System.Drawing.Point(79, 188)
+        Me.lblWord2.Location = New System.Drawing.Point(81, 188)
         Me.lblWord2.Name = "lblWord2"
-        Me.lblWord2.Size = New System.Drawing.Size(131, 22)
+        Me.lblWord2.Size = New System.Drawing.Size(129, 22)
         Me.lblWord2.TabIndex = 18
         Me.lblWord2.Text = "???????????????"
         Me.lblWord2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -135,7 +135,7 @@ Partial Class Level1
         Me.lblWord3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWord3.Location = New System.Drawing.Point(293, 343)
         Me.lblWord3.Name = "lblWord3"
-        Me.lblWord3.Size = New System.Drawing.Size(63, 22)
+        Me.lblWord3.Size = New System.Drawing.Size(61, 22)
         Me.lblWord3.TabIndex = 19
         Me.lblWord3.Text = "?????"
         Me.lblWord3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -146,7 +146,7 @@ Partial Class Level1
         Me.lblWord4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWord4.Location = New System.Drawing.Point(362, 583)
         Me.lblWord4.Name = "lblWord4"
-        Me.lblWord4.Size = New System.Drawing.Size(51, 22)
+        Me.lblWord4.Size = New System.Drawing.Size(50, 22)
         Me.lblWord4.TabIndex = 20
         Me.lblWord4.Text = "????"
         Me.lblWord4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -216,7 +216,7 @@ Partial Class Level1
         Me.Controls.Add(Me.Button1)
         Me.KeyPreview = True
         Me.Name = "Level1"
-        Me.Text = "Level1"
+        Me.Text = "Level 1"
         CType(Me.picJail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

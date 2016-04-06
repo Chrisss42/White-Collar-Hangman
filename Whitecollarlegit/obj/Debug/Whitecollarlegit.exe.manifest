@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Whitecollarlegit.exe" size="14696376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Whitecollarlegit.exe" size="14692280">
       <assemblyIdentity name="Whitecollarlegit" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>n/t4Nlllwj8gOpPt38sYVuH5lONEEACYN26VuKWuW8I=</dsig:DigestValue>
+        <dsig:DigestValue>FH7fgoCEV82hbIO5D1YZSHkUZlzCnIKvF8C4OXfHL3s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

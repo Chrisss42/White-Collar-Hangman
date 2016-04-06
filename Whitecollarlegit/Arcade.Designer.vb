@@ -31,6 +31,7 @@ Partial Class Arcade
         Me.btnStart = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.btnQuit = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.picChar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -104,12 +105,24 @@ Partial Class Arcade
         Me.btnQuit.Text = "Save + Quit"
         Me.btnQuit.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(743, 259)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(289, 94)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "GUESS THE " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CHARACTER!"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Arcade
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Whitecollarlegit.My.Resources.Resources.Arcade
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.picChar)
@@ -130,4 +143,5 @@ Partial Class Arcade
     Friend WithEvents btnStart As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnQuit As Button
+    Friend WithEvents Label2 As Label
 End Class

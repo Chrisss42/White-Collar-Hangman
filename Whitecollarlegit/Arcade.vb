@@ -1,14 +1,15 @@
-﻿Public Module Variables
-    Public Points As Integer
+﻿'By Ayush Gupta and Chris Green (31/3/2016)
+'Arcade mode. Gives points for spending at the Street. Randomly generates buttons associated with a picture to be guessed.
+Public Module Variables
+    Public intPoints As Integer
 End Module
 Public Class Arcade
     Dim buttonpoint As Point
     Dim myfont As Font = New Font(FontFamily.GenericSansSerif, 14.0F, FontStyle.Bold)
-    Dim letterpos As Integer
     Dim characters(35) As Button
-    Dim correct As Integer
-    Dim incorrect As Integer
-    Dim addPoints As Integer
+    Dim intCorrect As Integer
+    Dim intInCorrect As Integer
+    Dim intAddPoints As Integer
     Private Sub Arcade_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Create all buttons then hide & disable all of them
         buttonpoint.X = 140
@@ -29,6 +30,7 @@ Public Class Arcade
             AddHandler characters(x).Click, AddressOf Clicked
             Me.Controls.Add(characters(x))
         Next
+        'Name the buttons, the exclamation mark shows the correct one
         characters(0).Text = "Peter Burke"
         characters(1).Text = "Sara Ellis"
         characters(2).Text = "Neal Caffrey"
@@ -78,7 +80,7 @@ Public Class Arcade
             characters(x).Enabled = False
             characters(x).Visible = False
         Next
-        Randomize()
+        Randomize() 'Fair :)
         lblPoint.Text = ""
     End Sub
 
@@ -87,19 +89,19 @@ Public Class Arcade
         'If the answer is correct +10 sec and +1 correct, else -10 sec and +1 incorrect
         If sender.AccessibleDescription = "!" Then
             lblTime.Text += 10
-            correct += 1
+            intCorrect += 1
         Else lblTime.Text -= 10
-            incorrect += 1
+            intInCorrect += 1
         End If
-        addPoints = correct - incorrect
-        lblPoint.Text = Points + addPoints
+        intAddPoints = intCorrect - intInCorrect
+        lblPoint.Text = intPoints + intAddPoints
         genPic()
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         'Reset incorrect/correct, and start the round
-        incorrect = 0
-        correct = 0
+        intInCorrect = 0
+        intCorrect = 0
         genPic()
         'Checks upgrade
         If ATime = True Then
@@ -189,19 +191,23 @@ Public Class Arcade
         End If
         If lblTime.Text <= 0 Then
             Timer1.Stop()
-            MsgBox("Congrats, " & playerName & " you got: " & vbCrLf & correct & " correct!" & " & " & incorrect & " incorrect" & vbCrLf & "Your score is: " & addPoints & vbCrLf & "Press 'Start' to play again!")
+            MsgBox("Congrats, " & playerName & " you got: " & vbCrLf & intCorrect & " correct!" & " & " & intInCorrect & " incorrect" & vbCrLf & "Your score is: " & intAddPoints & vbCrLf & "Press 'Start' to play again!")
             btnStart.Enabled = True
-                lblPoint.Text = Points
-            End If
+            lblPoint.Text = intPoints
+        End If
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
         'Shows total points before quitting
         If ADouble = True Then
-            addPoints = addPoints * 2
+            intAddPoints = intAddPoints * 2
         End If
-        Points = Points + addPoints
-        MsgBox("Total points earned: " & Points)
+        intPoints = intPoints + intAddPoints
+        MsgBox("Total points earned: " & intPoints, 0, "Points")
+        'Refreshes the labels on the main menu
+        My.Forms.MainMenu.lblTrust.Text = "Trust: " & intTrust & "%"
+        My.Forms.MainMenu.lblPoints.Text = "Points: " & intPoints
+        My.Forms.MainMenu.lblLevel.Text = "Campaign Level: " & intLevel
         Me.Close()
         MainMenu.Show()
     End Sub

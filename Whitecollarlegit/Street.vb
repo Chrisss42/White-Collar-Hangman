@@ -1,4 +1,7 @@
-﻿Public Module StreetVar
+﻿'By Ayush Gupta and Chris Green (31/3/2016)
+'In game store. Uses in game currency to purchase upgrades for easier progression. Can also convert between currencies.
+Public Module StreetVar
+    'Global upgrade variables
     Public ATime As Boolean = False
     Public ATDep As Boolean = False
     Public ADouble As Boolean = False
@@ -8,6 +11,11 @@ End Module
 
 Public Class Street
     Private Sub btnMain_Click(sender As Object, e As EventArgs) Handles btnMain.Click
+        'Refreshes the labels on the main menu
+        My.Forms.MainMenu.lblTrust.Text = "Trust: " & intTrust & "%"
+        My.Forms.MainMenu.lblPoints.Text = "Points: " & intPoints
+        My.Forms.MainMenu.lblLevel.Text = "Campaign Level: " & intLevel
+        'Return to main menu
         Me.Close()
         MainMenu.Show()
     End Sub
@@ -33,82 +41,94 @@ Public Class Street
             btnCHandicap.Enabled = False
         End If
 
-        lblPoints.Text = "Points: " & Points
-        lblTrust.Text = "Trust: " & Trust & "%"
+        lblPoints.Text = "Points: " & intPoints
+        lblTrust.Text = "Trust: " & intTrust & "%"
     End Sub
 
     Private Sub btnATime_Click(sender As Object, e As EventArgs) Handles btnATime.Click
-        If Points >= 20 Then
-            Points -= 20
+        'Gives more time in Arcade mode; the code here checks if they have enough and then subtracts it, then it refreshes the labels
+        If intPoints >= 20 Then
+            intPoints -= 20
             ATime = True
             btnATime.Enabled = False
-            lblPoints.Text = "Points: " & Points
-            lblTrust.Text = "Trust: " & Trust & "%"
+            lblPoints.Text = "Points: " & intPoints
+            lblTrust.Text = "Trust: " & intTrust & "%"
         End If
     End Sub
 
     Private Sub btnATDep_Click(sender As Object, e As EventArgs) Handles btnATDep.Click
-        If Points >= 30 Then
-            Points -= 30
+        'Time depletes slower in arcade; the code here checks if they have enough and then subtracts it, then it refreshes the labels
+
+        If intPoints >= 30 Then
+            intPoints -= 30
             ATDep = True
             btnATDep.Enabled = False
-            lblPoints.Text = "Points: " & Points
-            lblTrust.Text = "Trust: " & Trust & "%"
+            lblPoints.Text = "Points: " & intPoints
+            lblTrust.Text = "Trust: " & intTrust & "%"
         End If
     End Sub
 
     Private Sub btnADouble_Click(sender As Object, e As EventArgs) Handles btnADouble.Click
-        If Points >= 40 Then
-            Points -= 40
+        'Double points in arcade; the code here checks if they have enough and then subtracts it, then it refreshes the labels
+
+        If intPoints >= 40 Then
+            intPoints -= 40
             ADouble = True
             btnADouble.Enabled = False
-            lblPoints.Text = "Points: " & Points
-            lblTrust.Text = "Trust: " & Trust & "%"
+            lblPoints.Text = "Points: " & intPoints
+            lblTrust.Text = "Trust: " & intTrust & "%"
         End If
     End Sub
 
     Private Sub btnCDTrust_Click(sender As Object, e As EventArgs) Handles btnCDTrust.Click
-        If Trust >= 90 Then
-            Trust -= 90
+        'Double trust in campaign; the code here checks if they have enough and then subtracts it, then it refreshes the labels
+
+        If intTrust >= 90 Then
+            intTrust -= 90
             CDTrust = True
             btnCDTrust.Enabled = False
-            lblPoints.Text = "Points: " & Points
-            lblTrust.Text = "Trust: " & Trust & "%"
+            lblPoints.Text = "Points: " & intPoints
+            lblTrust.Text = "Trust: " & intTrust & "%"
         End If
     End Sub
 
     Private Sub btnCHandicap_Click(sender As Object, e As EventArgs) Handles btnCHandicap.Click
-        If Trust >= 75 Then
-            Trust -= 75
+        'Gets rid of the handicap (less points based on what you already have), makes it possible for >100%; the code here checks if they have enough and then subtracts it, then it refreshes the labels
+
+        If intTrust >= 75 Then
+            intTrust -= 75
             CHandicap = True
             btnCHandicap.Enabled = False
-            lblPoints.Text = "Points: " & Points
-            lblTrust.Text = "Trust: " & Trust & "%"
+            lblPoints.Text = "Points: " & intPoints
+            lblTrust.Text = "Trust: " & intTrust & "%"
         End If
     End Sub
 
     Private Sub btnCGetaway_Click(sender As Object, e As EventArgs) Handles btnCGetaway.Click
-        If Trust >= 50 Then
-            Trust -= 50
-            Getaways += 1
-            lblPoints.Text = "Points: " & Points
-            lblTrust.Text = "Trust: " & Trust & "%"
-        ElseIf Getaways <= 0 Then
+        'Buy one more getaway; the code here checks if they have enough and then subtracts it, then it refreshes the labels. If they don't have enough and they have no getaways it tells them about the conversion
+
+        If intTrust >= 50 Then
+            intTrust -= 50
+            intGetaways += 1
+            lblPoints.Text = "Points: " & intPoints
+            lblTrust.Text = "Trust: " & intTrust & "%"
+        ElseIf (intGetaways <= 0 And intTrust < 50) Then
             MsgBox("Try to play arcade and convert points to trust.")
         End If
     End Sub
 
     Private Sub btnTtoP_Click(sender As Object, e As EventArgs) Handles btnTtoP.Click
+        'Converts trust to points, checks value in textbox and changes it to points. Refreshes labels
         If (IsNumeric(txtTtoP.Text) = True) Then
             Dim TrustConvert As Integer
             TrustConvert = txtTtoP.Text
-            If TrustConvert > Trust Then
+            If TrustConvert > intTrust Then
                 MsgBox("Not enough Trust")
             Else
-                Trust -= TrustConvert
-                Points += TrustConvert
-                lblPoints.Text = "Points: " & Points
-                lblTrust.Text = "Trust: " & Trust & "%"
+                intTrust -= TrustConvert
+                intPoints += TrustConvert
+                lblPoints.Text = "Points: " & intPoints
+                lblTrust.Text = "Trust: " & intTrust & "%"
             End If
         Else MsgBox("Invalid entry, input a number.")
         End If
@@ -116,16 +136,18 @@ Public Class Street
     End Sub
 
     Private Sub btnPtoT_Click(sender As Object, e As EventArgs) Handles btnPtoT.Click
+        'Converts points to trust, checks value in textbox and changes it to trust. Refreshes labels
+
         If (IsNumeric(txtPtoT.Text) = True) Then
             Dim PointConvert As Integer
             PointConvert = txtPtoT.Text
-            If PointConvert > Points Then
+            If PointConvert > intPoints Then
                 MsgBox("Not enough Points")
             Else
-                Points -= PointConvert
-                Trust += PointConvert
-                lblPoints.Text = "Points: " & Points
-                lblTrust.Text = "Trust: " & Trust & "%"
+                intPoints -= PointConvert
+                intTrust += PointConvert
+                lblPoints.Text = "Points: " & intPoints
+                lblTrust.Text = "Trust: " & intTrust & "%"
             End If
         Else MsgBox("Invalid entry, input a number.")
         End If
